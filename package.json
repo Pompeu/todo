@@ -1,0 +1,25 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "todo pompeu",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "author": "Itacir Ferreira Pompeu",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "charlatan": "^1.0.0",
+    "should": "^7.1.0",
+    "superagent": "^1.3.0"
+  },
+  "dependencies": {
+    "koa-route": "^2.4.2",
+    "mongoose": "^4.1.6"
+  }
+}
