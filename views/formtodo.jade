@@ -2,5 +2,8 @@ extends layout
 
 block content
   form(method="post",action="/addtodo")
-    input(name="details")
-    button add
+    div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+       input(class="mdl-textfield__input" type="text" id="todo" name="details")
+       label(class="mdl-textfield__label" for="todo") todo details
+    button(class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored") AddTodo
+    a(href="/", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent") Voltar 

@@ -1,23 +1,21 @@
 extends layout
 
 block content
-  a(href="/newtodo")
-    button newTodo
-  table(class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp")
-    thead
-      tr
-        th(class="mdl-data-table__cell--non-numeric") isDone 
-        th details
-        th date
-        th remove
-    each todo in todos
-      tbody
+  div
+    a(href="/newtodo")
+      button(class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored") newTodo
+    table(class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp")
+      thead
         tr
-          td(class="mdl-data-table__cell--non-numeric")
-            input(type="checkbox")
-          td   
-            span= todo.details
-          td
-            span= todo.initalData
-          td
-            a(href="/removetodo/#{todo._id}") remove
+          th Details
+          th Date
+          th Remove
+      tbody
+        each todo in todos
+          tr
+            td(class="mdl-data-table__cell--non-numeric")
+              | #{todo.details}
+            td
+              | #{todo.initalData}
+            td
+              a(href="/removetodo/#{todo._id}", class="mdl-button mdl-js-button mdl-button--accent") remove
