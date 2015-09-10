@@ -9,7 +9,7 @@ module.exports = {
   getAll : getAll,
   del : del,
   update : update
-}
+};
 
 function *add() {
   let todo = yield parse(this);
