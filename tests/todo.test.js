@@ -16,7 +16,6 @@ describe('todo',() => {
     todo.should.have.property('details');
     todo.should.have.property('isDone');
     todo.should.have.property('initalData');
-    todo.should.have.property('finishDate');
   });
   
   it('todo should dont be have details is empty and isDone start with false', () => {

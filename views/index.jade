@@ -1,18 +1,21 @@
 extends layout
 
 block content
-  div
-    a(href="/newtodo")
+  .center 
+    a(class="newtodo",href="/newtodo")
       button(class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored") newTodo
-    table(class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp")
+    table(class="mdl-data-table mdl-js-data-table mdl-shadow--2dp")
       thead
         tr
+          th Update 
           th Details
           th Date
           th Remove
       tbody
         each todo in todos
           tr
+            td
+              input(type="checkbox", name="#{todo._id}", onclick="sendCH(this);", checked=todo.isDone)
             td(class="mdl-data-table__cell--non-numeric")
               | #{todo.details}
             td

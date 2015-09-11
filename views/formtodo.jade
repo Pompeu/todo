@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  if invalid
+    span(class="fail")= invalid
   form(method="post",action="/addtodo")
     div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
        input(class="mdl-textfield__input" type="text" id="todo" name="details")

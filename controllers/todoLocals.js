@@ -9,22 +9,22 @@ module.exports.get = function *() {
   this.body = yield render('index.jade',{title : "Todo KoaJs" , todos : todos});
 }
 
-module.exports.newtodo = function *() {
+module.exports.formtodo = function *() {
   this.body = yield render('formtodo.jade',{title : "Add Todo KoaJs"});
 }
 
 module.exports.addtodo = function *() {
   let todo = yield parse(this);
-  let createdTodo = yield Todo.create(todo);
-  if(createdTodo){
-    let todos = yield Todo.find({}).exec();
-    this.body = yield render('index.jade',{title : "Todo KoaJs", todos : todos });
+  try {
+    var createdTodo = yield Todo.create(todo);
+    createdTodo ? this.redirect('/') : this.throw(404);
+  } catch (e) {
+    this.body = yield render('formtodo.jade',{title : "Add Todo KoaJs", invalid : e.errors.details.message});
   }
 }
+
 module.exports.removetodo = function *(id) {
-  let delTodo = yield Todo.remove({_id : id});
-  if(delTodo){
-    let todos = yield Todo.find({}).exec();
-    this.body = yield render('index.jade',{title : "Todo KoaJs", todos : todos });
-  }
+  let removeTodo = yield Todo.remove({_id : id});
+  removeTodo ? this.redirect('/') : this.throw(404);
 }
+

@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/todo');
 app.use(serve('public'));
 
 app.use(routes.get('/',todoLocalsctrl.get));
-app.use(routes.get('/newtodo',todoLocalsctrl.newtodo));
+app.use(routes.get('/newtodo',todoLocalsctrl.formtodo));
 app.use(routes.post('/addtodo',todoLocalsctrl.addtodo));
 app.use(routes.get('/removetodo/:id',todoLocalsctrl.removetodo));
 

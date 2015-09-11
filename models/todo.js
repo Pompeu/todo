@@ -9,7 +9,6 @@ function todoHandler() {
    details    : { type : String,  required : true, trin : true},
    isDone     : { type : Boolean, default : false},
    initalData : { type : Date,    default : Date.now},
-   finishDate : { type : Date }
   });
 
   return mongoose.model('Todo', schema);
