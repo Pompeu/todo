@@ -24,6 +24,7 @@ describe('todoCtrl', () => {
         res.should.be.exist;
         res.body.should.be.a('Object');
         res.body._id.should.exist;
+        res.status.should.be.eql(201);
         id = res.body._id;
         done();
       })
@@ -35,6 +36,7 @@ describe('todoCtrl', () => {
       .end((err , res) => {
         res.should.be.exist;
         res.body.should.be.a('Object');
+        res.status.should.be.eql(200);
         res.body._id.should.exist;
         done();
       })
@@ -46,6 +48,7 @@ describe('todoCtrl', () => {
       .end((err , res) => {
         res.should.be.exist;
         res.body.should.be.a('Array');
+        res.status.should.be.eql(200);
         done();
       })
   });

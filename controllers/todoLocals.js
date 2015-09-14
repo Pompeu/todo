@@ -1,7 +1,7 @@
 // file: controllers/todo.js - created at 2015-09-09, 12:45
 'use strict';
 let Todo = require('../models/todo');
-let render = require('../helper/render');
+let render = require('../helpers/render');
 let parse = require('co-body');
 
 module.exports.get = function *() {
@@ -23,8 +23,8 @@ module.exports.addtodo = function *() {
   }
 }
 
-module.exports.removetodo = function *(id) {
-  let removeTodo = yield Todo.remove({_id : id});
+module.exports.removetodo = function *() {
+  let removeTodo = yield Todo.remove({_id : this.params.id});
   removeTodo ? this.redirect('/') : this.throw(404);
 }
 
