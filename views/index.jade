@@ -13,7 +13,7 @@ block content
           th Remove
       tbody
         each todo in todos
-          tr
+          tr(class=todo.isDone? 'isDone' : '')
             td
               input(type="checkbox", name="#{todo._id}", onclick="sendCH(this);", checked=todo.isDone)
             td(class="mdl-data-table__cell--non-numeric")
@@ -21,4 +21,5 @@ block content
             td
               | #{todo.initalData}
             td
-              a(href="/removetodo/#{todo._id}", class="mdl-button mdl-js-button mdl-button--accent") remove
+              a(href="/removetodo/#{todo._id}")
+                button(class="mdl-button mdl-js-button mdl-button--accent") remove

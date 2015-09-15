@@ -1,3 +1,7 @@
 .fail {
   background : #E91E63;
 }
+
+.isDone {
+  text-decoration: line-through;
+}

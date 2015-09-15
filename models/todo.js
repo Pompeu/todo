@@ -1,8 +1,9 @@
 // file: models/todo.js - created at 2015-09-09, 10:40
+'use strict';
 function todoHandler() {
-  var mongoose = require('mongoose');
-  var Schema = mongoose.Schema;
-  var schema = null;
+  let mongoose = require('mongoose');
+  let Schema = mongoose.Schema;
+  let schema = null;
 
   schema = new Schema({
     // start with schema here
