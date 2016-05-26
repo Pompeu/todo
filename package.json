@@ -27,7 +27,7 @@
     "koa-router": "^5.1.2",
     "koa-static": "^1.4.9",
     "mongoose": "^4.1.6",
+    "pug": "^2.0.0-alpha8",
     "todomvc-app-css": "^2.0.1"
   }
 }
-

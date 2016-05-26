@@ -15,7 +15,8 @@ block content
         each todo in todos
           tr(class=todo.isDone? 'isDone' : '')
             td
-              input(type="checkbox", name="#{todo._id}", onclick="sendCH(this);", checked=todo.isDone)
+              label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect
+                input.mdl-checkbox__input(type="checkbox", name="#{todo._id}", checked=todo.isDone)
             td(class="mdl-data-table__cell--non-numeric")
               | #{todo.details}
             td

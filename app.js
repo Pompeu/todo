@@ -1,10 +1,9 @@
 'use strict';
 
-let koa =  require('koa');
-let app = module.exports = koa();
-let routes = require('koa-route');
-let mongoose = require('mongoose');
-let serve = require('koa-static');
+const koa =  require('koa');
+const app = module.exports = koa();
+const mongoose = require('mongoose');
+const serve = require('koa-static');
 
 mongoose.connect('mongodb://localhost/todo');
 app.use(serve('public'));

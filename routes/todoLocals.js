@@ -1,7 +1,6 @@
 'use strict';
 
-const apitodos = '/api/v1/todos';
-let todoLocalsctrl = require('../controllers/todoLocals');
+const todoLocalsctrl = require('../controllers/todoLocals');
 
 module.exports = require('koa-router')()
       .get('/',todoLocalsctrl.get)
