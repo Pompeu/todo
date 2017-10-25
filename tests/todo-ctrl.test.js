@@ -1,10 +1,10 @@
 // file: tests/todo-ctrl.test.js - created at 2015-09-09, 03:15
 'use strict';
 
-let should = require('chai').should();
-let request =  require('superagent');
-let ch =  require('charlatan');
-let url =  require('url');
+const should = require('chai').should();
+const request =  require('superagent');
+const ch =  require('charlatan');
+const url =  require('url');
 const ABS_URL = 'http://localhost:5000/api/v1/todos';
 
 describe('todoCtrl', () => {
@@ -54,7 +54,7 @@ describe('todoCtrl', () => {
   });
 
   it('should be update one todo by id set status true', (done) => {
-    var body = {
+    const body = {
       isDone : true  
     };
     request

@@ -1,12 +1,12 @@
 // file: tests/todo.test.js - created at 2015-09-09, 10:40
 'use strict';
 
-let should = require('chai').should();
-let Todo = require('../models/todo');
+const should = require('chai').should();
+const Todo = require('../models/todo');
 
 describe('todo',() => {
 
-  let todo = new Todo({ details : "Nova Tarefa" });
+  const todo = new Todo({ details : "Nova Tarefa" });
 
   it('todo should be a object', () => {
     todo.should.be.a('Object');
